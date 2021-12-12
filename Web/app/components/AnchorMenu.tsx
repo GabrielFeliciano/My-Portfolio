@@ -3,7 +3,7 @@ import { AnchorButton } from "@/types/anchor";
 const CustomButton = ({ config }: { config: AnchorButton }) => {
     return (
         <a
-            className="flex space-x-2 p-2 rounded-sm text-xl select-none font-sans hover:scale-105"
+            className="flex animate-pulse space-x-2 p-2 rounded-sm text-xl select-none font-sans hover:scale-105"
             href={config.url}
         >
             <span className="flex items-center justify-center w-4">

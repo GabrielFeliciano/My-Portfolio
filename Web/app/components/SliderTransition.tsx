@@ -2,6 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from "react";
 
 interface SliderTransitionProps {
     wrapper?: HTMLAttributes<HTMLDivElement>,
+    sliderClassName?: string,
     children?: ReactNode,
     time: number
 }
@@ -9,7 +10,7 @@ interface SliderTransitionProps {
 const SliderTransition = (props: SliderTransitionProps) => {
     const [isTransiting, setTransiting] = useState(true);
 
-    const { children, wrapper, time } = props;
+    const { children, sliderClassName, wrapper, time } = props;
 
     const wrapperWithDefaults = {
         ...wrapper,
@@ -20,7 +21,7 @@ const SliderTransition = (props: SliderTransitionProps) => {
         <div {...wrapperWithDefaults}>
             {/* Slider */}
             <div 
-                className={`absolute bg-red-500 w-1 -translate-x-1 h-full`} 
+                className={`absolute bg-red-500 w-1 -translate-x-1 h-full ${sliderClassName}`} 
                 style={{ animation: `track1 ${time}s` }}
             />
 
