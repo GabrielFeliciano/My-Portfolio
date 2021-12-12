@@ -15,13 +15,18 @@ const Home: NextPage = () => {
         menuButtons={
           [
             {
-              text: 'About',
-              url: '/about',
+              text: 'About me',
+              url: '',
               icon: 'fas fa-info'
             },
             {
+              text: 'Projects',
+              url: '',
+              icon: 'fab fa-github-alt'
+            },
+            {
               text: 'Contact',
-              url: '/about',
+              url: '',
               icon: 'fas fa-phone'
             }
           ]
