@@ -11,7 +11,7 @@ interface FirstScreenProps {
  
 const FirstScreen = (props: FirstScreenProps) => {
     return (
-        <section className='first-screen grid grid-cols-2 w-screen h-screen bg-gray-200 bg-gradient-to-br from-green-200 to-purple-200'>
+        <section className='text-gray-200 first-screen grid grid-cols-2 w-screen h-screen bg-gray-200 bg-gray-800'>
             <div className='row-span-2'>
                 <Picture img={props.img} />
             </div>
@@ -19,10 +19,10 @@ const FirstScreen = (props: FirstScreenProps) => {
                 <SliderTransition 
                     time={2}
                     wrapper={{
-                        className: 'my-6',
+                        className: 'my-4',
                     }}
                 >
-                    <h1 className='border-red-500 border-l-4 px-8 py-2 text-6xl font-bold'>
+                    <h1 className='border-red-500 border-l-4 px-8 py-4 text-6xl font-bold'>
                         {props.title}
                     </h1>
                 </SliderTransition>

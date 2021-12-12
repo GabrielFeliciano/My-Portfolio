@@ -16,23 +16,26 @@ const SliderTransition = (props: SliderTransitionProps) => {
         className: `relative overflow-hidden inline-block ${wrapper?.className || ''}`
     };
 
-    // styles
-    const track1 = `relative overflow-hidden animate-[track1_${time}s]`
-    const track2 = `relative animate-[track2_${time}s]`
-
     return (
         <div {...wrapperWithDefaults}>
             {/* Slider */}
-            <div className={`absolute bg-red-500 w-1 -translate-x-1 h-full animate-[track1_${time}s]`}></div>
+            <div 
+                className={`absolute bg-red-500 w-1 -translate-x-1 h-full`} 
+                style={{ animation: `track1 ${time}s` }}
+            />
 
             {/* Track 1: Moves track 2 from end to beginning relative to left */}
             <div 
                 onAnimationEnd={() => setTransiting(false)} 
-                className={track1}
+                className='relative overflow-hidden'
+                style={{ animation: `track1 ${time}s` }}
             >
                 {/* Track 2: Offsets children 'origin' position */}
                 {/* Origin start at right and goes to left */}
-                <div className={track2}>
+                <div 
+                    className='relative'
+                    style={{ animation: `track2 ${time}s` }}
+                >
                     {children}
                 </div>
             </div>
