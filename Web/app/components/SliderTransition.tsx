@@ -1,29 +1,41 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from "react";
 
 interface SliderTransitionProps {
     wrapper?: HTMLAttributes<HTMLDivElement>,
-    slider?: HTMLAttributes<HTMLDivElement>,
     children?: ReactNode,
     time: number
 }
 
 const SliderTransition = (props: SliderTransitionProps) => {
-    const { children, wrapper, slider } = props;
+    const [isTransiting, setTransiting] = useState(true);
+
+    const { children, wrapper, time } = props;
 
     const wrapperWithDefaults = {
         ...wrapper,
-        className: `relative inline-block ${wrapper?.className ?? ''}`
+        className: `relative overflow-hidden inline-block ${wrapper?.className || ''}`
     };
 
-    const sliderWithDefaults = {
-        ...slider,
-        className: `absolute top-0 left-0 w-full h-full animate-[reduce_${props.time}s_ease-in-out_forwards] ${slider?.className ?? ''}`
-    }
+    // styles
+    const track1 = `relative overflow-hidden animate-[track1_${time}s]`
+    const track2 = `relative animate-[track2_${time}s]`
 
     return (
         <div {...wrapperWithDefaults}>
-            { children }
-            <div {...sliderWithDefaults} />
+            {/* Slider */}
+            <div className={`absolute bg-red-500 w-1 -translate-x-1 h-full animate-[track1_${time}s]`}></div>
+
+            {/* Track 1: Moves track 2 from end to beginning relative to left */}
+            <div 
+                onAnimationEnd={() => setTransiting(false)} 
+                className={track1}
+            >
+                {/* Track 2: Offsets children 'origin' position */}
+                {/* Origin start at right and goes to left */}
+                <div className={track2}>
+                    {children}
+                </div>
+            </div>
         </div>
     );
 }

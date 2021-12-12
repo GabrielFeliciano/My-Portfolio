@@ -1,8 +1,17 @@
-@keyframes reduce {
+@keyframes track1 {
     from {
-        width: 100%;
+        left: 100%;
     }
     to {
-        width: 0;
+        left: 0;
+    }
+}
+
+@keyframes track2 {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
     }
 }

@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     <>
       <FirstScreen 
         img='/img/me.png'
-        title='Gabriel Feliciano'
+        title='Gabriel'
         menuButtons={
           [
             {
