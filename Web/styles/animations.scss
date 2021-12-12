@@ -15,3 +15,12 @@
         left: 0;
     }
 }
+
+@keyframes picture {
+    from {
+        max-height: 24rem;
+    }
+    to {
+        max-height: 36rem;
+    }
+}

@@ -6,12 +6,13 @@ import SliderTransition from '@/components/SliderTransition';
 interface FirstScreenProps {
     img: string,
     title: string,
+    description: string,
     menuButtons: AnchorButton[]
 }
  
 const FirstScreen = (props: FirstScreenProps) => {
     return (
-        <section className='text-gray-200 first-screen grid grid-cols-2 w-screen h-screen bg-gray-800'>
+        <section className='text-gray-200 first-screen grid grid-cols-2 h-screen bg-gray-800'>
             <div className='row-span-2'>
                 <Picture img={props.img} />
             </div>
@@ -26,6 +27,7 @@ const FirstScreen = (props: FirstScreenProps) => {
                     <h1 className='border-red-500 border-l-[.25rem] px-8 py-4 text-6xl font-bold'>
                         {props.title}
                     </h1>
+                    <p className='p-8 text-xl'>{ props.description }</p>
                 </SliderTransition>
             </div>
             <div>
@@ -38,9 +40,12 @@ const FirstScreen = (props: FirstScreenProps) => {
 function Picture (props: { img: string }) {
     return (
         <div className='flex items-center justify-center w-full h-full'>
-            <div className='inline-block rounded-full overflow-hidden'>
+            <div 
+                className='inline-block w-96 rounded-full overflow-hidden drop-shadow-sm shadow-orange-50/500'
+                style={{animation: 'picture 3s ease-in-out'}}
+            >
                 <img 
-                    className='h-auto w-96 content-contain select-none bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500'
+                    className='h-auto content-contain select-none bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500'
                     src={props.img}
                     alt="" 
                 />
