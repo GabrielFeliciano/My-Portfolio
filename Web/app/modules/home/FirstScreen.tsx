@@ -47,8 +47,8 @@ function Picture (props: { img: string }) {
     return (
         <div className='flex items-center justify-center w-full h-full'>
             <div 
-                className='inline-block w-96 rounded-full overflow-hidden shadow-[0_4px_0_0_rgba(255,165,0,0.6)]'
-                style={imageInView ? {animation: 'picture 3s ease-in-out'} : {}}
+                className='inline-block w-96 rounded-full overflow-hidden'
+                style={imageInView ? {animation: 'picture 1.5s ease-in-out forwards'} : {}}
                 ref={image}
             >
                 <img 

@@ -17,10 +17,16 @@
 }
 
 @keyframes picture {
-    from {
+    0% {
         max-height: 24rem;
+        transform: scale(0.7) rotateZ(-5deg);
+    }
+    65% {
+        max-height: 36rem;
+        transform: scale(1.1) rotateZ(5deg);
     }
     to {
-        max-height: 36rem;
+        transform: none;
+        box-shadow: 0 4px 0 0 rgba(255,165,0,0.6);
     }
 }
