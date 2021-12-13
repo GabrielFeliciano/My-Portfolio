@@ -2,6 +2,8 @@ import Image from 'next/image'
 import AnchorMenu from '@component/AnchorMenu';
 import { AnchorButton } from '@/types/anchor';
 import SliderTransition from '@/components/SliderTransition';
+import Particle from '@/components/Particle';
+import { useInView } from 'react-intersection-observer';
 
 interface FirstScreenProps {
     img: string,
@@ -13,7 +15,7 @@ interface FirstScreenProps {
 const FirstScreen = (props: FirstScreenProps) => {
     return (
         <section className='text-gray-200 first-screen grid grid-cols-2 h-screen bg-gray-800'>
-            <div className='row-span-2'>
+            <div className='row-span-2 relative'>
                 <Picture img={props.img} />
             </div>
             <div>
@@ -38,11 +40,16 @@ const FirstScreen = (props: FirstScreenProps) => {
 }
 
 function Picture (props: { img: string }) {
+    const [image, imageInView] = useInView({
+        triggerOnce: false
+    });
+
     return (
         <div className='flex items-center justify-center w-full h-full'>
             <div 
-                className='inline-block w-96 rounded-full overflow-hidden drop-shadow-sm shadow-orange-50/500'
-                style={{animation: 'picture 3s ease-in-out'}}
+                className='inline-block w-96 rounded-full overflow-hidden shadow-[0_4px_0_0_rgba(255,165,0,0.6)]'
+                style={imageInView ? {animation: 'picture 3s ease-in-out'} : {}}
+                ref={image}
             >
                 <img 
                     className='h-auto content-contain select-none bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500'
