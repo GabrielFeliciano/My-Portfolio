@@ -59,5 +59,33 @@ export const badges: Badge[] = [
     {
         text: 'Elm',
         icon: 'devicon-elm-plain'
+    },
+    {
+        text: 'GraphQL',
+        icon: 'devicon-graphql-plain'
+    },
+    {
+        text: 'Arduino',
+        icon: 'devicon-arduino-plain'
+    },
+    {
+        text: 'C#',
+        icon: 'devicon-csharp-plain'
+    },
+    {
+        text: 'Unity',
+        icon: 'devicon-unity-original'
+    },
+    {
+        text: 'Dart',
+        icon: 'devicon-dart-plain'
+    },
+    {
+        text: 'Flutter',
+        icon: 'devicon-flutter-plain'
+    },
+    {
+        text: 'Svelte',
+        icon: 'devicon-svelte-plain'
     }
 ]
