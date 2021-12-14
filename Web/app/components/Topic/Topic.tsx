@@ -13,7 +13,7 @@ export default function Topic (props: TopicProps) {
             <h2 className="text-6xl font-bold text-center p-4 sticky top-0"> 
                 {props.title}
             </h2> 
-            { props.children ?? <div style={{height: 900, width: '100%' }} /> }
+            { props.children }
         </section>
     );
 }

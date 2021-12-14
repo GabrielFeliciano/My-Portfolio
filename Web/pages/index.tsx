@@ -1,11 +1,9 @@
 import TopicList from '@/components/Topic/TopicList'
 import DefaultLay from '@/layouts/DefaultLay'
 import AboutMe from '@/modules/home/AboutMe'
+import Projects from '@/modules/home/Projects'
 import FirstScreen from '@module/home/FirstScreen'
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 // Components
 
@@ -25,12 +23,12 @@ const Home: NextPage = () => {
             },
             {
               text: 'Projects',
-              url: '',
+              url: '#projects',
               icon: 'fab fa-github-alt'
             },
             {
               text: 'Contact',
-              url: '',
+              url: '#contact',
               icon: 'fas fa-phone'
             }
           ]
@@ -38,6 +36,7 @@ const Home: NextPage = () => {
       />
       <TopicList>
         <AboutMe />
+        <Projects />
       </TopicList>
     </DefaultLay>
   )
