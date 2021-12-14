@@ -4,7 +4,7 @@ export interface DefaultLayProps {
 
 export default function DefaultLay (props: DefaultLayProps) {
     return (
-        <div className="flex flex-col bg-gray-700">
+        <div className="flex flex-col bg-gray-700 text-gray-200">
             { props.children }
         </div>
     );

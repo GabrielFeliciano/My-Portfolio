@@ -2,6 +2,7 @@ import TopicList from '@/components/Topic/TopicList'
 import DefaultLay from '@/layouts/DefaultLay'
 import AboutMe from '@/modules/home/AboutMe'
 import Projects from '@/modules/home/Projects'
+import Tecnology from '@/modules/home/Tecnology'
 import FirstScreen from '@module/home/FirstScreen'
 import type { NextPage } from 'next'
 
@@ -17,17 +18,22 @@ const Home: NextPage = () => {
         menuButtons={
           [
             {
-              text: 'About me',
+              text: 'Sobre mim',
               url: '#about-me',
               icon: 'fas fa-info'
             },
             {
-              text: 'Projects',
+              text: 'Projetos',
               url: '#projects',
               icon: 'fab fa-github-alt'
             },
             {
-              text: 'Contact',
+              text: 'Tecnologias aprendidas',
+              url: '#projects',
+              icon: 'fas fa-tools'
+            },
+            {
+              text: 'Contato',
               url: '#contact',
               icon: 'fas fa-phone'
             }
@@ -37,6 +43,7 @@ const Home: NextPage = () => {
       <TopicList>
         <AboutMe />
         <Projects />
+        <Tecnology />
       </TopicList>
     </DefaultLay>
   )

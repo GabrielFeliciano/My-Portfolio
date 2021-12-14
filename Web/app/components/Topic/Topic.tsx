@@ -6,7 +6,7 @@ export interface TopicProps {
 }
 
 export default function Topic (props: TopicProps) {
-    const sectionClassName = `snap-start ${props.className ?? ''}`;
+    const sectionClassName = `snap-start sm:px-12 md:px-20 lg:px-32 md:px-0 pb-12 ${props.className ?? ''}`;
 
     return (
         <section id={props.id} className={sectionClassName}>

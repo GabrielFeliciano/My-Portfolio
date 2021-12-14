@@ -13,7 +13,7 @@ export default function Projects (props: any) {
     console.log(body);
 
     return (
-        <Topic title="Projects" id="projects">
+        <Topic title="Projetos" id="projects">
             <ul>
                 {
                     (body.repos ?? []).map((repo: RepoDto) => (
