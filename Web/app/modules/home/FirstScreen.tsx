@@ -2,7 +2,6 @@ import Image from 'next/image'
 import AnchorMenu from '@component/AnchorMenu';
 import { AnchorButton } from '@/types/anchor';
 import SliderTransition from '@/components/SliderTransition';
-import Particle from '@/components/Particle';
 import { useInView } from 'react-intersection-observer';
 
 interface FirstScreenProps {
@@ -13,10 +12,14 @@ interface FirstScreenProps {
 }
  
 const FirstScreen = (props: FirstScreenProps) => {
+    const [firstScreen, firstScreenInView] = useInView({
+        triggerOnce: false
+    });
+
     return (
-        <section className='text-gray-200 first-screen grid grid-cols-2 h-screen bg-gray-800'>
+        <section ref={firstScreen} className='text-gray-200 first-screen grid grid-cols-2 h-screen bg-gray-800'>
             <div className='row-span-2 relative'>
-                <Picture img={props.img} />
+                <Picture img={props.img} shouldAnimate={firstScreenInView} />
             </div>
             <div>
                 <SliderTransition 
@@ -25,6 +28,7 @@ const FirstScreen = (props: FirstScreenProps) => {
                     wrapper={{
                         className: 'my-4'
                     }}
+                    shouldAnimate={firstScreenInView}
                 >
                     <h1 className='border-red-500 border-l-[.25rem] px-8 py-4 text-6xl font-bold'>
                         {props.title}
@@ -39,17 +43,12 @@ const FirstScreen = (props: FirstScreenProps) => {
     );
 }
 
-function Picture (props: { img: string }) {
-    const [image, imageInView] = useInView({
-        triggerOnce: false
-    });
-
+function Picture (props: { img: string, shouldAnimate?: boolean }) {
     return (
         <div className='flex items-center justify-center w-full h-full'>
             <div 
                 className='inline-block w-96 rounded-full overflow-hidden'
-                style={imageInView ? {animation: 'picture 1.5s ease-in-out forwards'} : {}}
-                ref={image}
+                style={props.shouldAnimate ? {animation: 'picture 1.5s ease-in-out forwards'} : {}}
             >
                 <img 
                     className='h-auto content-contain select-none bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500'
