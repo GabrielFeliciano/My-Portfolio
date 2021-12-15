@@ -1,0 +1,35 @@
+.pad {
+    position: relative;
+
+    &::after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 20%;
+        min-width: 30px;
+        height: 5px;
+        background-color: #f59e0b;
+    }
+}
+
+.first-screen {
+    $color: rgba(255, 255, 255, 0.05);
+
+    background-image: linear-gradient(
+        90deg,
+        $color 1rem,
+        transparent 10rem,
+        transparent calc(100% - 10rem),
+        $color calc(100% - 1rem),
+    );
+}
+
+.topic__tecnology--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 120px));
+    gap: 1rem;
+    justify-content: space-evenly;
+}
