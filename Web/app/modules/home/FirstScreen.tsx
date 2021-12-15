@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Image from 'next/image'
-import AnchorMenu from '@component/AnchorMenu';
 import { AnchorButton } from '@/types/anchor';
 import SliderTransition from '@/components/SliderTransition';
 import { useInView } from 'react-intersection-observer';
+import AnchorMenu from '@/components/CustomAnchor/AnchorMenu';
 
 interface FirstScreenProps {
     img: string,

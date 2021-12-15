@@ -5,7 +5,7 @@ import { badges } from "@/config/badges";
 export default function Tecnology () {
     // 'grid-cols-[repeat(auto-fit,minmax(40px,80px))] lg:grid-cols-[repeat(auto-fit,minmax(80px,120px))]'
     return (
-        <Topic title="Tecnologias aprendidas">
+        <Topic title="Tecnologias aprendidas" id="tecnology">
             <p className="my-8 pb-4 lg:text-2xl text-lg text-center pad">
                 Abaixo está a lista de tecnologias que incluí <em>
                 linguagens, ferramentas de desenvolvimento e programas

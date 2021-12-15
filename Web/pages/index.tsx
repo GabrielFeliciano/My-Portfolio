@@ -29,7 +29,7 @@ const Home: NextPage = () => {
             },
             {
               text: 'Tecnologias aprendidas',
-              url: '#projects',
+              url: '#tecnology',
               icon: 'fas fa-tools'
             },
             {
