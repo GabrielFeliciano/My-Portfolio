@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <FirstScreen 
         img='/img/me.png'
         title='Gabriel Feliciano'
-        description='Olá! Sou Gabriel Feliciano, desenvolvedor Full-Stack, apaixonado por tecnologia e inovação. Adoro desenvolver e aprender novas tecnologias e ferramentas para melhorar minhas habilidades e desenvolver projetos. Também gosto de jogar jogos e assistir vídeos e filmes.'
+        description='Olá! Sou Gabriel Feliciano, desenvolvedor Full-Stack, apaixonado por tecnologia e inovação. Adoro desenvolver e aprender novas tecnologias e ferramentas para melhorar minhas habilidades e desenvolver projetos.'
         menuButtons={
           [
             {
