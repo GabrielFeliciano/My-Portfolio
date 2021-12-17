@@ -23,17 +23,17 @@ function buildOnClick(url: string) {
 
 }
 
-export default function CustomButton ({ config }: { config: AnchorButton }) {
+export default function CustomButton (props: AnchorButton) {
     return (
         <a
             className="flex animate-pulse space-x-2 p-2 rounded-sm lg:text-xl select-none font-sans hover:scale-105"
-            onClick={buildOnClick(config.url)}
-            href={config.url}
+            onClick={buildOnClick(props.url ?? '')}
+            href={props.url}
         >
             <span className="flex items-center justify-center w-4">
-                <i className={`${config.icon}`}></i>
+                <i className={`${props.icon}`}></i>
             </span>
-            <span>{config.text}</span>
+            <span>{props.text}</span>
         </a>
     )
 }

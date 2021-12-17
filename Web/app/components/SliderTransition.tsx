@@ -1,21 +1,22 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { IntersectionOptions, useInView } from "react-intersection-observer";
 
 interface SliderTransitionProps {
     wrapper?: HTMLAttributes<HTMLDivElement>,
     sliderClassName?: string,
     children?: ReactNode,
     time: number,
+    useInViewOptions?: IntersectionOptions,
     shouldAnimate?: boolean
 }
 
 const SliderTransition = (props: SliderTransitionProps) => {
+    const { children, sliderClassName, wrapper, time, shouldAnimate, useInViewOptions } = props;
+
     const [isTransiting, setTransiting] = useState(true);
-    const [slider, sliderInView] = useInView({
+    const [slider, sliderInView] = useInView(useInViewOptions ?? {
         triggerOnce: false
     });
-
-    const { children, sliderClassName, wrapper, time, shouldAnimate } = props;
     
     const animationValue = shouldAnimate != null ? shouldAnimate : sliderInView;
 

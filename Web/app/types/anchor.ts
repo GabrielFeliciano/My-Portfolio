@@ -1,5 +1,5 @@
 export interface AnchorButton {
-    url: string;
+    url?: string;
     text: string;
-    icon: string;
+    icon?: string;
 }
