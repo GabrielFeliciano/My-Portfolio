@@ -12,7 +12,7 @@ export default function AnchorMenu ({ buttons }: AnchorMenuProps) {
                 buttons.map(
                     (config, index) =>
                         <CustomButton
-                            config={config}
+                            {...config}
                             key={index}
                         />
                 )

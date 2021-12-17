@@ -20,7 +20,8 @@
       "@/*": ["app/*"],
       "@component/*": ["app/components/*"],
       "@layout/*": ["app/layouts/*"],
-      "@module/*": ["app/modules/*"]
+      "@module/*": ["app/modules/*"],
+      "$/*": ["*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

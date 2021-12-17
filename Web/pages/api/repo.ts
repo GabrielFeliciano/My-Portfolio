@@ -30,8 +30,5 @@ export default async function handler (req:NextApiRequest, res:NextApiResponse) 
     const response_repo = await Promise.all(
         repos_urls.map(url => mapper(url))
     );
-    const repos: RepoListDto = {
-        repos: response_repo.filter(r => r !== null) as RepoDto[]
-    }
-    res.json(repos);
+    res.json(response_repo.filter(r => r !== null) as RepoDto[]);
 }
