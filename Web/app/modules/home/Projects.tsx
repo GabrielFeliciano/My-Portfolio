@@ -25,10 +25,10 @@ export default function Projects (props: any) {
                             }}
                             useInViewOptions={{ triggerOnce: true }}
                         >
-                            <ul className="p-2 grid grid-cols-2 gap-4">
+                            <ul className="p-2 flex flex-wrap gap-4">
                                 {
                                     data.map((repo: RepoDto) => (
-                                        <li key={repo.id}>
+                                        <li className="w-72 flex-grow" key={repo.id}>
                                             <Project repo={repo} />
                                         </li>
                                     ))
