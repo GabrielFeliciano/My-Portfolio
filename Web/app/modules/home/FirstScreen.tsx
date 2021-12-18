@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import MyPicture from '$/public/img/me.png';
 
 import Image from 'next/image'
 import { AnchorButton } from '@/types/anchor';
@@ -29,9 +29,9 @@ const FirstScreen = (props: FirstScreenProps) => {
                     className='w-96 md:h-auto rounded-full overflow-hidden'
                     style={firstScreenInView ? {animation: 'picture 1.5s ease-in-out forwards'} : {}}
                 >
-                    <img 
+                    <Image 
                         className='h-full w-auto content-contain select-none from-indigo-500 via-purple-500 to-pink-500 bg-gradient-to-br'
-                        src={props.img}
+                        src={MyPicture}
                         alt="" 
                     />
                 </div>

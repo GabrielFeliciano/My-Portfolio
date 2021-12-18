@@ -17,11 +17,11 @@ const Home: NextPage = () => {
         description='Olá! Sou Gabriel Feliciano, desenvolvedor Full-Stack, apaixonado por tecnologia e inovação. Adoro desenvolver e aprender novas tecnologias e ferramentas para melhorar minhas habilidades e desenvolver projetos.'
         menuButtons={
           [
-            {
-              text: 'Sobre mim',
-              url: '#about-me',
-              icon: 'fas fa-info'
-            },
+            // {
+            //   text: 'Sobre mim',
+            //   url: '#about-me',
+            //   icon: 'fas fa-info'
+            // },
             {
               text: 'Projetos',
               url: '#projects',
