@@ -11,7 +11,7 @@ export interface IProjectsProps {
 export default function Project ({ repo }: IProjectsProps) {
     const name = repo.name
         .trim()
-        .replace(/\-+/, ' ')
+        .replace(/\-+/g, ' ')
         .toLowerCase()
 
     const buttonCl = "outline outline-amber-500 outline-[2px] text-center p-2 disabled:opacity-50";
